@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "LRCCharacter.h"
+#import "LRCBoss.h"
 
 @interface LRCFactory : NSObject
 
 - (NSArray *) tiles;
-- (LRCCharacter *)createCharacter;
+- (LRCCharacter *) createCharacter;
+- (LRCBoss *) createBoss;
 
 
 @end

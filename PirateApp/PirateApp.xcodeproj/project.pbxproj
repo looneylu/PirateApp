@@ -38,6 +38,7 @@
 		84E0D5F9197B144C00A0D7AC /* LRCWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0D5F8197B144C00A0D7AC /* LRCWeapon.m */; };
 		84E0D5FC197B14DE00A0D7AC /* LRCCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0D5FB197B14DE00A0D7AC /* LRCCharacter.m */; };
 		84E0D5FF197B154000A0D7AC /* LRCArmor.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0D5FE197B154000A0D7AC /* LRCArmor.m */; };
+		84E0D602197B322F00A0D7AC /* LRCBoss.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0D601197B322F00A0D7AC /* LRCBoss.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,8 @@
 		84E0D5FB197B14DE00A0D7AC /* LRCCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRCCharacter.m; sourceTree = "<group>"; };
 		84E0D5FD197B154000A0D7AC /* LRCArmor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRCArmor.h; sourceTree = "<group>"; };
 		84E0D5FE197B154000A0D7AC /* LRCArmor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRCArmor.m; sourceTree = "<group>"; };
+		84E0D600197B322F00A0D7AC /* LRCBoss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRCBoss.h; sourceTree = "<group>"; };
+		84E0D601197B322F00A0D7AC /* LRCBoss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRCBoss.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +228,8 @@
 				84E0D5EF197AF20D00A0D7AC /* LRCTile.m */,
 				84E0D5F4197AF3B600A0D7AC /* LRCFactory.h */,
 				84E0D5F5197AF3B600A0D7AC /* LRCFactory.m */,
+				84E0D600197B322F00A0D7AC /* LRCBoss.h */,
+				84E0D601197B322F00A0D7AC /* LRCBoss.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E0D602197B322F00A0D7AC /* LRCBoss.m in Sources */,
 				84E0D5B0197AEA2C00A0D7AC /* LRCAppDelegate.m in Sources */,
 				84E0D5AC197AEA2C00A0D7AC /* main.m in Sources */,
 				84E0D5B6197AEA2C00A0D7AC /* LRCViewController.m in Sources */,

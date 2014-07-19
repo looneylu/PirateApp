@@ -136,4 +136,12 @@
     
 }
 
+- (LRCBoss *)createBoss
+{
+    // returns an instance of LRCBoss
+    LRCBoss *boss = [[LRCBoss alloc] init];
+    boss.health = 60;
+    return boss;
+}
+
 @end
