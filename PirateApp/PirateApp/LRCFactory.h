@@ -11,8 +11,8 @@
 
 @interface LRCFactory : NSObject
 
-@property (nonatomic, strong) LRCCharacter *pirateCharacter;
-
 - (NSArray *) tiles;
+- (LRCCharacter *)createCharacter;
+
 
 @end

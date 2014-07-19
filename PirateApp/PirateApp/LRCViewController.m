@@ -36,7 +36,6 @@
 
 @implementation LRCViewController
 
-#pragma IBAction buttons
 
 - (IBAction)actionButtonPressed:(id)sender
 {
@@ -84,13 +83,29 @@
 }
 
 
+- (void) updateButtons
+{
+    // checks to see if buttons are valid moves. If not, button is disabled
+    self.westButton.enabled = [self tileExistsAtPoint:CGPointMake(self.currentPoint.x - 1, self.currentPoint.y)];
+    self.eastButton.enabled = [self tileExistsAtPoint:CGPointMake(self.currentPoint.x + 1, self.currentPoint.y)];
+    self.northButton.enabled = [self tileExistsAtPoint:CGPointMake(self.currentPoint.x, self.currentPoint.y + 1)];
+    self.southButton.enabled = [self tileExistsAtPoint:CGPointMake(self.currentPoint.x, self.currentPoint.y - 1)];
+}
+
 - (void) updateTile
 {
     // updates tile information
     LRCTile *tile = [[self.tiles objectAtIndex:self.currentPoint.x] objectAtIndex:self.currentPoint.y];
     self.storyText.text = tile.story;
     self.storyBackgroundImageView.image = tile.backgroundImage;
+    self.healthValueLabel.text = [NSString stringWithFormat:@"%d", self.pirateCharacter.characterHealth];
+    self.damageValueLabel.text = [NSString stringWithFormat:@"%d", self.pirateCharacter.characterDamage];
+    self.armorNameLabel.text = self.pirateCharacter.armor.armorName;
+    self.weaponNameLabel.text = self.pirateCharacter.weapon.weaponName;
+
+    [self.actionButton setTitle:tile.actionButtonName forState:UIControlStateNormal];
 }
+
 
 
 - (BOOL) tileExistsAtPoint:(CGPoint) point
@@ -101,14 +116,23 @@
         return  NO;
 }
 
-- (void) updateButtons
+- (void)updateCharacterStatsForArmor:(LRCArmor *)armor withWeapons:(LRCWeapon *)weapon withHealthEffect:(int)healthEffect
 {
-    // checks to see if buttons are valid moves. If not, button is disabled
-    self.westButton.enabled = [self tileExistsAtPoint:CGPointMake(self.currentPoint.x - 1, self.currentPoint.y)];
-    self.eastButton.enabled = [self tileExistsAtPoint:CGPointMake(self.currentPoint.x + 1, self.currentPoint.y)];
-    self.northButton.enabled = [self tileExistsAtPoint:CGPointMake(self.currentPoint.x, self.currentPoint.y + 1)];
-    self.southButton.enabled = [self tileExistsAtPoint:CGPointMake(self.currentPoint.x, self.currentPoint.y - 1)];
+    // updates character's health 
+    if (armor){
+        self.pirateCharacter.characterHealth = self.pirateCharacter.characterHealth - self.pirateCharacter.characterHealth + armor.healthValue;
+        self.pirateCharacter.armor = armor;
+    } else if (weapon){
+        self.pirateCharacter.characterDamage = self.pirateCharacter.characterDamage - self.pirateCharacter.characterDamage + weapon.weaponDamageValue;
+        self.pirateCharacter.weapon = weapon;
+    } else if (healthEffect) {
+        self.pirateCharacter.characterHealth = self.pirateCharacter.characterHealth + healthEffect;
+    } else {
+        self.pirateCharacter.characterHealth = self.pirateCharacter.characterHealth + self.pirateCharacter.armor.healthValue;
+        self.pirateCharacter.characterDamage = self.pirateCharacter.characterDamage + self.pirateCharacter.weapon.weaponDamageValue;
+    }
 }
+
 
 - (void)viewDidLoad
 {
@@ -119,6 +143,9 @@
     
     //create an array of tiles using LRCFactory class
     self.tiles = [factory tiles];
+    
+    // create a character using LRCFactory
+    self.pirateCharacter = [factory createCharacter];
     
     // pirate game should start off at origin
     self.currentPoint = CGPointMake(0, 0);

@@ -14,7 +14,11 @@
 @interface LRCCharacter : NSObject
 
 @property (nonatomic, strong) LRCArmor *armor;
-@property (nonatomic, strong) LRCWeapon *weapon; 
+@property (nonatomic, strong) LRCWeapon *weapon;
+@property (nonatomic) int characterDamage;
+@property (nonatomic) int characterHealth;
+
+
 
 
 @end
