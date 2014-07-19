@@ -53,7 +53,7 @@
         [alertView show];
     } else if (self.boss.health <= 0){
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Boss Defeated" message:@"You've beat the boss!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [alertView show]; 
+        [alertView show];
     }
     
     [self updateTile];
@@ -97,6 +97,17 @@
     // check to enable/disable possible buttons
     [self updateButtons];
     [self updateTile];
+}
+
+- (IBAction)restartPressed:(id)sender
+{
+    // restarts game
+    self.tiles = nil;
+    self.pirateCharacter = nil;
+    self.boss = nil;
+    self.currentPoint = CGPointMake(0, 0);
+    
+    [self viewDidLoad];
 }
 
 

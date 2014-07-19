@@ -46,7 +46,7 @@
     tile4.backgroundImage = [UIImage imageNamed:@"PirateParrot.jpg"];
     LRCArmor *parrotArmor = [[LRCArmor alloc] init];
     parrotArmor.armorName = @"Parrot";
-    parrotArmor.healthValue = 20;
+    parrotArmor.healthValue = 120;
     tile4.armor = parrotArmor;
     tile4.actionButtonName = @"Adopt Parrot";
     
