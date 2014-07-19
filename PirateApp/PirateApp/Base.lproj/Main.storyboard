@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C2G-yb-lIG">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="-20" y="9" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <view alpha="0.64999999999999969" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LAX-OI-pIi">
@@ -128,18 +128,6 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQP-Z9-Z8M">
-                                <rect key="frame" x="211" y="451" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="N">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="directionButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="NAz-A0-RHh"/>
-                                    <action selector="northButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="p9a-ec-LG7"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YeL-oc-2OD">
                                 <rect key="frame" x="253" y="480" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -173,6 +161,17 @@
                                     <action selector="southButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="KtD-sJ-BFK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qEJ-XZ-scF">
+                                <rect key="frame" x="211" y="451" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="N">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="northButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FB7-i7-WaV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -183,7 +182,6 @@
                         <outlet property="damageValueLabel" destination="X7S-ZK-ayh" id="Ycn-jm-RXU"/>
                         <outlet property="eastButton" destination="YeL-oc-2OD" id="2cx-5R-fA4"/>
                         <outlet property="healthValueLabel" destination="wDY-CR-DwU" id="x2u-hk-ptA"/>
-                        <outlet property="northButton" destination="IQP-Z9-Z8M" id="jJj-z4-Mkn"/>
                         <outlet property="southButton" destination="eNE-iT-xsQ" id="TIS-ki-GuV"/>
                         <outlet property="storyBackgroundImageView" destination="AeA-Ku-ZoI" id="KI5-PQ-FWW"/>
                         <outlet property="storyLabel" destination="h1f-lm-ZEF" id="imx-T1-Zj6"/>

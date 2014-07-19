@@ -46,24 +46,40 @@
 {
     // if user presses north button, currentPoint y should increase by one
     self.currentPoint = CGPointMake(self.currentPoint.x, self.currentPoint.y+1);
+    
+    // check to enable/disable possible buttons
+    [self updateButtons];
+    [self updateTile];
 }
 
 - (IBAction)southButtonPressed:(id)sender
 {
     // currentPoint y should decrease by one
     self.currentPoint = CGPointMake(self.currentPoint.x, self.currentPoint.y - 1);
+    
+    // check to enable/disable possible buttons
+    [self updateButtons];
+    [self updateTile];
 }
 
 - (IBAction)eastButtonPressed:(id)sender
 {
     // current point x should increase by 1
     self.currentPoint = CGPointMake(self.currentPoint.x + 1, self.currentPoint.y);
+    
+    // check to enable/disable possible buttons
+    [self updateButtons];
+    [self updateTile];
 }
 
 - (IBAction)westButtonPressed:(id)sender
 {
     // current point x should decrease by 1
     self.currentPoint = CGPointMake(self.currentPoint.x - 1, self.currentPoint.y);
+    
+    // check to enable/disable possible buttons
+    [self updateButtons];
+    [self updateTile];
 }
 
 
