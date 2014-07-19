@@ -28,7 +28,7 @@
     tile2.story = @"You have come across an armory. Would you like to upgrade your armor to steel armor?";
     LRCArmor *steelArmor = [[LRCArmor alloc] init];
     steelArmor.armorName = @"Steel Armor";
-    steelArmor.healthValue = 4;
+    steelArmor.healthValue = 110;
     tile2.armor = steelArmor;
     tile2.backgroundImage = [UIImage imageNamed:@"PirateBlacksmith.jpeg"];
     tile2.actionButtonName = @"Take armor";

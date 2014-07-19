@@ -39,7 +39,10 @@
 
 - (IBAction)actionButtonPressed:(id)sender
 {
-
+    LRCTile *tile = [[self.tiles objectAtIndex:self.currentPoint.x] objectAtIndex:self.currentPoint.y];
+    [self updateCharacterStatsForArmor:tile.armor withWeapons:tile.weapon withHealthEffect:tile.healthEffect];
+    
+    [self updateTile];
 }
 
 - (IBAction)northButtonPressed:(id)sender
@@ -118,7 +121,7 @@
 
 - (void)updateCharacterStatsForArmor:(LRCArmor *)armor withWeapons:(LRCWeapon *)weapon withHealthEffect:(int)healthEffect
 {
-    // updates character's health 
+    // updates character's health
     if (armor){
         self.pirateCharacter.characterHealth = self.pirateCharacter.characterHealth - self.pirateCharacter.characterHealth + armor.healthValue;
         self.pirateCharacter.armor = armor;
@@ -152,6 +155,7 @@
     
     [self updateTile];
     [self updateButtons];
+    [self updateCharacterStatsForArmor:nil withWeapons:nil withHealthEffect:0];
     
     
 }
