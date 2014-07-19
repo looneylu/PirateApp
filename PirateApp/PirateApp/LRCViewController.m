@@ -86,6 +86,7 @@
 
 - (void) updateTile
 {
+    // updates tile information
     LRCTile *tile = [[self.tiles objectAtIndex:self.currentPoint.x] objectAtIndex:self.currentPoint.y];
     self.storyText.text = tile.story;
     self.storyBackgroundImageView.image = tile.backgroundImage;
@@ -102,6 +103,7 @@
 
 - (void) updateButtons
 {
+    // checks to see if buttons are valid moves. If not, button is disabled
     self.westButton.enabled = [self tileExistsAtPoint:CGPointMake(self.currentPoint.x - 1, self.currentPoint.y)];
     self.eastButton.enabled = [self tileExistsAtPoint:CGPointMake(self.currentPoint.x + 1, self.currentPoint.y)];
     self.northButton.enabled = [self tileExistsAtPoint:CGPointMake(self.currentPoint.x, self.currentPoint.y + 1)];

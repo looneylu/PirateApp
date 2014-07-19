@@ -67,4 +67,16 @@
     
 }
 
+- (void)createCharacter
+{
+    LRCCharacter *pirate = [[LRCCharacter alloc] init];
+    pirate.weapon.weaponName = @"fists";
+    pirate.weapon.weaponDamageValue = 1;
+    pirate.armor.healthValue = 20;
+    pirate.armor.armorName = @"none";
+    
+    self.pirateCharacter = pirate;
+    
+}
+
 @end

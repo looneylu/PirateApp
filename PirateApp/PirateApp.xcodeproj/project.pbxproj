@@ -35,6 +35,9 @@
 		84E0D5EC197AEA4C00A0D7AC /* PirateWeapons.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 84E0D5E0197AEA4C00A0D7AC /* PirateWeapons.jpeg */; };
 		84E0D5F0197AF20D00A0D7AC /* LRCTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0D5EF197AF20D00A0D7AC /* LRCTile.m */; };
 		84E0D5F6197AF3B600A0D7AC /* LRCFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0D5F5197AF3B600A0D7AC /* LRCFactory.m */; };
+		84E0D5F9197B144C00A0D7AC /* LRCWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0D5F8197B144C00A0D7AC /* LRCWeapon.m */; };
+		84E0D5FC197B14DE00A0D7AC /* LRCCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0D5FB197B14DE00A0D7AC /* LRCCharacter.m */; };
+		84E0D5FF197B154000A0D7AC /* LRCArmor.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0D5FE197B154000A0D7AC /* LRCArmor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,12 @@
 		84E0D5EF197AF20D00A0D7AC /* LRCTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRCTile.m; sourceTree = "<group>"; };
 		84E0D5F4197AF3B600A0D7AC /* LRCFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRCFactory.h; sourceTree = "<group>"; };
 		84E0D5F5197AF3B600A0D7AC /* LRCFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRCFactory.m; sourceTree = "<group>"; };
+		84E0D5F7197B144C00A0D7AC /* LRCWeapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRCWeapon.h; sourceTree = "<group>"; };
+		84E0D5F8197B144C00A0D7AC /* LRCWeapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRCWeapon.m; sourceTree = "<group>"; };
+		84E0D5FA197B14DE00A0D7AC /* LRCCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRCCharacter.h; sourceTree = "<group>"; };
+		84E0D5FB197B14DE00A0D7AC /* LRCCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRCCharacter.m; sourceTree = "<group>"; };
+		84E0D5FD197B154000A0D7AC /* LRCArmor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRCArmor.h; sourceTree = "<group>"; };
+		84E0D5FE197B154000A0D7AC /* LRCArmor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRCArmor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +215,12 @@
 		84E0D5ED197AF1D700A0D7AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				84E0D5F7197B144C00A0D7AC /* LRCWeapon.h */,
+				84E0D5F8197B144C00A0D7AC /* LRCWeapon.m */,
+				84E0D5FA197B14DE00A0D7AC /* LRCCharacter.h */,
+				84E0D5FB197B14DE00A0D7AC /* LRCCharacter.m */,
+				84E0D5FD197B154000A0D7AC /* LRCArmor.h */,
+				84E0D5FE197B154000A0D7AC /* LRCArmor.m */,
 				84E0D5EE197AF20D00A0D7AC /* LRCTile.h */,
 				84E0D5EF197AF20D00A0D7AC /* LRCTile.m */,
 				84E0D5F4197AF3B600A0D7AC /* LRCFactory.h */,
@@ -329,6 +344,9 @@
 				84E0D5B6197AEA2C00A0D7AC /* LRCViewController.m in Sources */,
 				84E0D5F6197AF3B600A0D7AC /* LRCFactory.m in Sources */,
 				84E0D5F0197AF20D00A0D7AC /* LRCTile.m in Sources */,
+				84E0D5FC197B14DE00A0D7AC /* LRCCharacter.m in Sources */,
+				84E0D5F9197B144C00A0D7AC /* LRCWeapon.m in Sources */,
+				84E0D5FF197B154000A0D7AC /* LRCArmor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

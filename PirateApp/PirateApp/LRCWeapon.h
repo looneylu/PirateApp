@@ -1,5 +1,5 @@
 //
-//  LRCFactory.h
+//  LRCWeapon.h
 //  PirateApp
 //
 //  Created by Luis Carbuccia on 7/19/14.
@@ -7,12 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LRCCharacter.h"
 
-@interface LRCFactory : NSObject
+@interface LRCWeapon : NSObject
 
-@property (nonatomic, strong) LRCCharacter *pirateCharacter;
-
-- (NSArray *) tiles;
+@property (nonatomic) int weaponDamageValue;
+@property (nonatomic, strong) NSString *weaponName; 
 
 @end
