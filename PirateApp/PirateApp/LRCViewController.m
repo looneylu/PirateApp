@@ -22,7 +22,6 @@
 @property (strong, nonatomic) IBOutlet UITextView *storyText;
 
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImageView;
-@property (strong, nonatomic) IBOutlet UIImageView *storyBackgroundImageView;
 
 @property (strong, nonatomic) IBOutlet UIButton *actionButton;
 @property (strong, nonatomic) IBOutlet UIButton *northButton;
@@ -40,7 +39,22 @@
 - (IBAction)actionButtonPressed:(id)sender
 {
     LRCTile *tile = [[self.tiles objectAtIndex:self.currentPoint.x] objectAtIndex:self.currentPoint.y];
+    
+    if (tile.healthEffect == -15){
+        self.boss.health = self.boss.health - self.pirateCharacter.characterDamage;
+    }
+    
     [self updateCharacterStatsForArmor:tile.armor withWeapons:tile.weapon withHealthEffect:tile.healthEffect];
+    
+    if (self.pirateCharacter.characterHealth <= 0)
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Death Message" message:@"You have died. Please restatert the game!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        
+        [alertView show];
+    } else if (self.boss.health <= 0){
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Boss Defeated" message:@"You've beat the boss!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alertView show]; 
+    }
     
     [self updateTile];
 }
@@ -100,7 +114,7 @@
     // updates tile information
     LRCTile *tile = [[self.tiles objectAtIndex:self.currentPoint.x] objectAtIndex:self.currentPoint.y];
     self.storyText.text = tile.story;
-    self.storyBackgroundImageView.image = tile.backgroundImage;
+    self.backgroundImageView.image = tile.backgroundImage;
     self.healthValueLabel.text = [NSString stringWithFormat:@"%d", self.pirateCharacter.characterHealth];
     self.damageValueLabel.text = [NSString stringWithFormat:@"%d", self.pirateCharacter.characterDamage];
     self.armorNameLabel.text = self.pirateCharacter.armor.armorName;
@@ -149,6 +163,9 @@
     
     // create a character using LRCFactory
     self.pirateCharacter = [factory createCharacter];
+    
+    // create a boss using LRCFactory
+    self.boss = [factory createBoss];
     
     // pirate game should start off at origin
     self.currentPoint = CGPointMake(0, 0);

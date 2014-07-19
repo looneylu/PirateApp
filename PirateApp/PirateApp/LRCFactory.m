@@ -102,7 +102,7 @@
     LRCTile *tile12 = [[LRCTile alloc] init];
     tile12.story = @"Your final face off with the fearsome pirate boss!";
     tile12.backgroundImage = [UIImage imageNamed:@"PirateBoss.jpeg"];
-    tile12.healthEffect = -10;
+    tile12.healthEffect = -15;
     tile12.actionButtonName = @"Fight";
     
     NSArray *fourthColumn = [[NSArray alloc] initWithObjects:tile10, tile11, tile12, nil];
