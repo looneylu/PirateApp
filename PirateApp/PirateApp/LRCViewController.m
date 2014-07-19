@@ -18,7 +18,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *damageValueLabel;
 @property (strong, nonatomic) IBOutlet UILabel *weaponNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *armorNameLabel;
-@property (strong, nonatomic) IBOutlet UILabel *storyLabel;
+
+@property (strong, nonatomic) IBOutlet UITextView *storyText;
 
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (strong, nonatomic) IBOutlet UIImageView *storyBackgroundImageView;
@@ -45,7 +46,7 @@
 - (IBAction)northButtonPressed:(id)sender
 {
     // if user presses north button, currentPoint y should increase by one
-    self.currentPoint = CGPointMake(self.currentPoint.x, self.currentPoint.y+1);
+    self.currentPoint = CGPointMake(self.currentPoint.x, self.currentPoint.y + 1);
     
     // check to enable/disable possible buttons
     [self updateButtons];
@@ -86,7 +87,8 @@
 - (void) updateTile
 {
     LRCTile *tile = [[self.tiles objectAtIndex:self.currentPoint.x] objectAtIndex:self.currentPoint.y];
-    self.storyLabel.text = tile.story;
+    self.storyText.text = tile.story;
+    self.storyBackgroundImageView.image = tile.backgroundImage;
 }
 
 

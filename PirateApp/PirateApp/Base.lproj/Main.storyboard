@@ -119,12 +119,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1f-lm-ZEF">
-                                        <rect key="frame" x="20" y="49" width="240" height="103"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999973" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsZ-ke-n5P">
+                                        <rect key="frame" x="20" y="49" width="239" height="103"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -184,7 +185,7 @@
                         <outlet property="healthValueLabel" destination="wDY-CR-DwU" id="x2u-hk-ptA"/>
                         <outlet property="southButton" destination="eNE-iT-xsQ" id="TIS-ki-GuV"/>
                         <outlet property="storyBackgroundImageView" destination="AeA-Ku-ZoI" id="KI5-PQ-FWW"/>
-                        <outlet property="storyLabel" destination="h1f-lm-ZEF" id="imx-T1-Zj6"/>
+                        <outlet property="storyText" destination="rsZ-ke-n5P" id="5Sv-pc-w2h"/>
                         <outlet property="weaponNameLabel" destination="X7b-iG-Z3z" id="bDn-yD-c7e"/>
                         <outlet property="westButton" destination="Qkc-AF-1DO" id="mHA-pK-BKy"/>
                     </connections>
