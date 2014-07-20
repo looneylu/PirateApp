@@ -17,4 +17,5 @@
 @property (nonatomic, strong) LRCCharacter *pirateCharacter;
 @property (nonatomic, strong) LRCBoss *boss;
 
+- (void) startGame; 
 @end

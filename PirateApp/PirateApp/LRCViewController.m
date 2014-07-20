@@ -107,7 +107,7 @@
     self.boss = nil;
     self.currentPoint = CGPointMake(0, 0);
     
-    [self viewDidLoad];
+    [self startGame];
 }
 
 
@@ -118,6 +118,28 @@
     self.eastButton.enabled = [self tileExistsAtPoint:CGPointMake(self.currentPoint.x + 1, self.currentPoint.y)];
     self.northButton.enabled = [self tileExistsAtPoint:CGPointMake(self.currentPoint.x, self.currentPoint.y + 1)];
     self.southButton.enabled = [self tileExistsAtPoint:CGPointMake(self.currentPoint.x, self.currentPoint.y - 1)];
+}
+
+- (void) startGame
+{
+    LRCFactory *factory = [[LRCFactory alloc] init];
+    
+    //create an array of tiles using LRCFactory class
+    self.tiles = [factory tiles];
+    
+    // create a character using LRCFactory
+    self.pirateCharacter = [factory createCharacter];
+    
+    // create a boss using LRCFactory
+    self.boss = [factory createBoss];
+    
+    // pirate game should start off at origin
+    self.currentPoint = CGPointMake(0, 0);
+    
+    [self updateTile];
+    [self updateButtons];
+    [self updateCharacterStatsForArmor:nil withWeapons:nil withHealthEffect:0];
+    
 }
 
 - (void) updateTile
@@ -167,26 +189,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    LRCFactory *factory = [[LRCFactory alloc] init];
-    
-    //create an array of tiles using LRCFactory class
-    self.tiles = [factory tiles];
-    
-    // create a character using LRCFactory
-    self.pirateCharacter = [factory createCharacter];
-    
-    // create a boss using LRCFactory
-    self.boss = [factory createBoss];
-    
-    // pirate game should start off at origin
-    self.currentPoint = CGPointMake(0, 0);
-    
-    [self updateTile];
-    [self updateButtons];
-    [self updateCharacterStatsForArmor:nil withWeapons:nil withHealthEffect:0];
-    
+
+    [self startGame];
     
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
